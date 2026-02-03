@@ -123,7 +123,7 @@ class Client
             $headers[] = 'X-AgreementGrantToken:'.$this->grant_token;
         }
 
-        if(! empty( $idempotency_key = '')) {
+        if(! empty( $idempotency_key)) {
             $headers[] = 'Idempotency-Key:'.$idempotency_key;
         }
 
