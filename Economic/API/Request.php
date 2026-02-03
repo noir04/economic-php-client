@@ -69,7 +69,7 @@ class Request
     public function post(string $path, $form = [], $idempotency_key = ''): Response
     {
         // Start the request and return the response
-        return $this->execute('POST', $path, $form);
+        return $this->execute('POST', $path, $form, $idempotency_key);
     }
 
     /**
@@ -88,7 +88,7 @@ class Request
     public function put(string $path, array $form = [], string $idempotency_key = '')
     {
         // Start the request and return the response
-        return $this->execute('PUT', $path, $form);
+        return $this->execute('PUT', $path, $form, $idempotency_key);
     }
 
     /**
@@ -107,7 +107,7 @@ class Request
     public function patch(string $path, array $form = [], string $idempotency_key = '')
     {
         // Start the request and return the response
-        return $this->execute('PATCH', $path, $form);
+        return $this->execute('PATCH', $path, $form, $idempotency_key);
     }
 
     /**
