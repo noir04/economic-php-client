@@ -98,7 +98,7 @@ class Client
         $this->ch = curl_init();
 
         // Apply authentication headers
-        $this->authenticate();
+        $this->authenticate($idempotency_key);
     }
 
     /**
