@@ -66,7 +66,7 @@ class Request
      *@throws Exception
      *
      */
-    public function post(string $path, $form = [], $idempotency_key = ''): Response
+    public function post(string $path, $form = [], string $idempotency_key = ''): Response
     {
         // Start the request and return the response
         return $this->execute('POST', $path, $form, $idempotency_key);
@@ -123,7 +123,7 @@ class Request
      *@throws Exception
      *
      */
-    public function delete(string $path, array $form = [], $idempotency_key = '')
+    public function delete(string $path, array $form = [], string $idempotency_key = '')
     {
         // Start the request and return the response
         return $this->execute('DELETE', $path, $form, $idempotency_key);
@@ -139,7 +139,7 @@ class Request
      *@throws Exception
      *
      */
-    protected function execute(string $request_type, string $path, array $form = [], array $idempotency_key = '')
+    protected function execute(string $request_type, string $path, array $form = [], string $idempotency_key = '')
     {
         // Store received headers in temporary memory file, remember sent headers
         if (! $path) {
